@@ -8,6 +8,7 @@ var users = {
   connected: false
 }
 
+// For Parsing Body x-www-form-encoded
 app.use(bodyParser.urlencoded({ extended: true })); 
 
 // Verify if the user login & password is correct
@@ -27,4 +28,5 @@ app.get('/connected', (req, res) => {
   res.status(401).json({ message: 'L\'utilisateur n\'est pas connecté.'})
 })
 
+// We start the Auth Api server
 app.listen(3000, () => console.log('Auth API is running.'))
