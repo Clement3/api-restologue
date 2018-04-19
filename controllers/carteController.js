@@ -6,7 +6,7 @@ exports.index = function (req, res) {
     return res.status(200).json({ data: data.listeDeCartes })  
 }
 
-exports.add = function (req, res) {
+exports.create = function (req, res) {
     if (req.body.nom) {
 
         carte = {
@@ -30,6 +30,19 @@ exports.show = function (req, res) {
     }
 
     return res.status(404).json({ message: "Impossible de trouver cet carte" })
+}
+
+exports.update = function (req, res) {
+    for (let i in data.listeDeCartes) {
+        if (data.listeDeCartes[i].id == req.params.id) {
+
+            data.listeDeCartes[i].nom = req.body.nom
+            
+            return res.status(200).json({ message: "Le carte à bien été modifier." })
+        }
+    }
+
+    return res.status(404).json({ message: "Impossible de trouver cet carte" })            
 }
 
 exports.destroy = function (req, res) {

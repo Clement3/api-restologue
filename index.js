@@ -14,7 +14,7 @@ app.use('/cartes', [cartesRouter, menusRouter])
 auth.use('/', authRouter)
 
 // On démarre l'application Auth
-auth.listen(3000, () => console.log('Auth API is running : http://localhost:3000'))
+auth.listen(4000, () => console.log('Auth API is running : http://localhost:4000'))
 
 // On démarre les applications Cartes & Menus
-app.listen(4000, () => console.log('Application API is running : http://localhost:4000'))
+//app.listen(5000, () => console.log('Application API is running : http://localhost:5000'))
