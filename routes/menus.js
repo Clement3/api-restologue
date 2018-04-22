@@ -23,7 +23,7 @@ router.delete('/:carteId/menus/destroy', menuController.destroyAllMenusToCarte)
 router.get('/menus/:menuId/show', menuController.showMenu)
 
 // Delete a menu from a menuId
-router.get('/menus/:menuId/destroy', menuController.destroyMenu)
+router.delete('/menus/:menuId/destroy', menuController.destroyMenu)
 
 // Update a menu from a menuId
 router.put('/menus/:menuId/update', menuController.updateMenu)

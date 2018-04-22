@@ -46,6 +46,19 @@ exports.edit = function (req, res) {
     return res.status(404).json({ message: 'Aucune cartes.' })
 }
 
+exports.update = function (req, res) {
+    for (let i in data.listeDeCartes) {
+        if (data.listeDeCartes[i].id == req.params.id) {
+
+            data.listeDeCartes[i].nom = req.body.nom
+            
+            return res.status(200).json({ message: "Le carte à bien été modifier." })
+        }
+    }
+
+    return res.status(404).json({ message: "Impossible de trouver cet carte" })            
+}
+
 exports.destroy = function (req, res) {
     for (let i in Carte) {
         if (Carte[i].id === req.params.id) {
