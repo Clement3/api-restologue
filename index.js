@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 const app = express()
 const auth = express()
 
@@ -8,10 +9,10 @@ const menusRouter = require('./routes/menus')
 const authRouter = require('./routes/auth')
 
 // Define route for cartes & menus
-app.use('/cartes', [cartesRouter, menusRouter])
+app.use('/api/cartes', [cors(), cartesRouter, menusRouter])
 
 // Define route for Auth Application
-auth.use('/', authRouter)
+auth.use('/api/auth', [cors(), authRouter])
 
 // On démarre l'application Auth
 auth.listen(3000, () => console.log('Auth API is running : http://localhost:3000'))

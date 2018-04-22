@@ -11,10 +11,13 @@ router.use(bodyParser.urlencoded({ extended: true }))
 router.get('/all', carteController.index)
 
 // Add new card
-router.post('/add', carteController.add)
+router.post('/create', carteController.create)
 
 // Get card by id (:id = req.params.id)
 router.get('/:id/show', carteController.show)
+
+// Get card by id (:id = req.params.id)
+router.put('/:id/edit', carteController.edit)
 
 // Delete card by id
 router.delete('/:id/delete', carteController.destroy)

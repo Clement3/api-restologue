@@ -16,8 +16,8 @@ router.get('/:carteId/menus/all', menuController.IndexMenusOnCart)
 // Add a menu to a carteId
 router.post('/:carteId/menus/add', menuController.addMenusToCarte)
 
-// Delete a menu from a carteId
-router.delete('/:carteId/menus/destroy', menuController.destroyMenusToCarte)
+// Delete all menu from a carteId
+router.delete('/:carteId/menus/destroy', menuController.destroyAllMenusToCarte)
 
 // Return a menu from menuId
 router.get('/menus/:menuId/show', menuController.showMenu)
